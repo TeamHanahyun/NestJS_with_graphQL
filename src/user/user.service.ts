@@ -28,4 +28,11 @@ export class UserService {
             data: userUpdateDto,
         })
     }
+
+    async deleteUser(id: number) {
+        return this.prisma.user.delete({
+            where: {id},
+        }
+        )
+    }
 }

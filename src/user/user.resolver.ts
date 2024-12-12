@@ -26,4 +26,9 @@ export class UserResolver {
     async updateUser(@Args('id') id: number, @Args('data') userUpdateDto: UserUpdateDto): Promise<User> {
         return this.userService.updateUser(id, userUpdateDto);
     }
+
+    @Mutation(() => User)
+    async deleteUser(@Args('id') id: number): Promise<User> {
+        return this.userService.deleteUser(id);
+    }
 }
