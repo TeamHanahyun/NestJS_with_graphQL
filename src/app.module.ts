@@ -8,6 +8,8 @@ import { UserResolver } from './user/user.resolver';
 import { PrismaService } from 'prisma/prisma.service';
 import { PostService } from './post/post.service';
 import { PostResolver } from './post/post.resolver';
+import { CommentService } from './comment/comment.service';
+import { CommentResolver } from './comment/comment.resolver';
 
 @Module({
   imports: [
@@ -18,6 +20,6 @@ import { PostResolver } from './post/post.resolver';
     })
   ],
   controllers: [AppController],
-  providers: [AppService, UserService, UserResolver, PrismaService, PostService, PostResolver],
+  providers: [AppService, UserService, UserResolver, PrismaService, PostService, PostResolver, CommentService, CommentResolver],
 })
 export class AppModule {}
