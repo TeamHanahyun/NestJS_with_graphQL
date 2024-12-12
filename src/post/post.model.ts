@@ -18,6 +18,6 @@ export class Post {
     @Field()
     createdAt: Date;
 
-    @Field(() => User)
-    author: User;
+    // @Field(() => User)
+    // author: User;
 }
