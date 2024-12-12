@@ -16,7 +16,7 @@ datasource db {
 model User {
   id        Int       @id @default(autoincrement())
   name      String
-  email     String @unique
+  email     String    @unique
   posts     Post[]
   comments  Comment[]
   createdAt DateTime  @default(now())
@@ -26,10 +26,11 @@ model Post {
   id        Int       @id @default(autoincrement())
   title     String
   content   String
+  category  String    @default("post")
   author    User      @relation(fields: [authorId], references: [id])
   authorId  Int
   comments  Comment[]
-  createdAt DateTime   @default(now())
+  createdAt DateTime  @default(now())
 }
 
 model Comment {
